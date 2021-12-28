@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "962732828302",
+    "project_id": "myticket-7b3fe",
+    "storage_bucket": "myticket-7b3fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962732828302:android:191df40e42a49b18390bdf",
+        "android_client_info": {
+          "package_name": "com.example.myticket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962732828302-3prj2s5voaa4uviq2jfb5upuisahfl5l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCZaKkKecqTsJVLpWdj2Gtr_dbvzblFqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962732828302-3prj2s5voaa4uviq2jfb5upuisahfl5l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
