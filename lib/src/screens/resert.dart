@@ -16,7 +16,7 @@ class _ResertScreenState extends State<ResertScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white24,
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(180),
         child: SingleChildScrollView(
@@ -37,7 +37,16 @@ class _ResertScreenState extends State<ResertScreen> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(hintText: 'Email'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.email),
+                labelText: 'Email',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   _email = value.trim();

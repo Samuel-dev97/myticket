@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myticket/src/screens/home.dart';
 import 'package:myticket/src/screens/login.dart';
+import 'package:myticket/src/screens/signup.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -43,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: Text('SIGN UP'),
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                        MaterialPageRoute(builder: (context) => SignScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(

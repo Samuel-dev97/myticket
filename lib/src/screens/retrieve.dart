@@ -18,7 +18,7 @@ class _RetrieveScreenState extends State<RetrieveScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white24,
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(180),
         child: SingleChildScrollView(
@@ -38,7 +38,16 @@ class _RetrieveScreenState extends State<RetrieveScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              decoration: InputDecoration(hintText: 'Fathers name'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.person),
+                labelText: 'Fathers Name',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   _name = value.trim();
@@ -49,7 +58,16 @@ class _RetrieveScreenState extends State<RetrieveScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              decoration: InputDecoration(hintText: 'Mothers name'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.person),
+                labelText: 'Mothers Name',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   mother = value.trim();
@@ -61,7 +79,16 @@ class _RetrieveScreenState extends State<RetrieveScreen> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               obscureText: true,
-              decoration: InputDecoration(hintText: 'favorite football team'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.sports_soccer),
+                labelText: 'Favorite Footbal Team',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   bola = value.trim();
@@ -98,16 +125,36 @@ class _RetrievalScreenState extends State<RetrievalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white24,
-      appBar: AppBar(
-        title: Text('Enter the questions  you set for password retrieval'),
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(180),
+        child: SingleChildScrollView(
+            child: AppBar(
+          centerTitle: true,
+          title: Text('Enter the Answers you set for password retrieval'),
+          backgroundColor: Colors.grey,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(50),
+                  bottomLeft: Radius.circular(50))),
+        )),
       ),
+      extendBodyBehindAppBar: false,
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              decoration: InputDecoration(hintText: 'Fathers name'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.person),
+                labelText: 'Fathers Name',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   _name = value.trim();
@@ -118,7 +165,16 @@ class _RetrievalScreenState extends State<RetrievalScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              decoration: InputDecoration(hintText: 'Mothers name'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.person),
+                labelText: 'Mothers Name',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   mother1 = value.trim();
@@ -130,7 +186,16 @@ class _RetrievalScreenState extends State<RetrievalScreen> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               obscureText: true,
-              decoration: InputDecoration(hintText: 'favorite football team'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.sports_soccer),
+                labelText: 'Favorite Footbal Team',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   bola1 = value.trim();

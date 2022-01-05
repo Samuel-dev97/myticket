@@ -7,12 +7,12 @@ import 'package:myticket/src/screens/retrieval.dart';
 import 'package:myticket/src/screens/retrieve.dart';
 import 'package:myticket/src/screens/verify.dart';
 
-class LoginScreen extends StatefulWidget {
+class SignScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignScreenState createState() => _SignScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignScreenState extends State<SignScreen> {
   late String _email;
 
   late String _name;
@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: SingleChildScrollView(
             child: AppBar(
           centerTitle: true,
-          title: Text('Enter Your Details'),
+          title: Text('Register Your Details'),
           backgroundColor: Colors.grey,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
@@ -172,14 +172,17 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(
-                    child: Text('Sign In'),
+                    child: Text('Sign Up'),
                     onPressed: () {
                       auth
-                          .signInWithEmailAndPassword(
+                          .createUserWithEmailAndPassword(
                               email: _email, password: _password)
                           .then((_) {
-                        Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => modes()));
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => RetrieveScreen()));
+                        ;
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => VerifyScreen()));
                       });
                     }),
               ],

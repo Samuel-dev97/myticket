@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myticket/src/screens/resert.dart';
+import 'package:myticket/src/screens/success.dart';
+
+import '../../main.dart';
 
 class VisaScreen extends StatefulWidget {
   @override
@@ -13,7 +16,7 @@ class _VisaScreenState extends State<VisaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white24,
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(180),
         child: SingleChildScrollView(
@@ -33,7 +36,16 @@ class _VisaScreenState extends State<VisaScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              decoration: InputDecoration(hintText: 'Bank Account Name/Type'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.money),
+                labelText: 'Bank Account Name/Type',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   _name = value.trim();
@@ -45,7 +57,16 @@ class _VisaScreenState extends State<VisaScreen> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(hintText: 'Visa Card Number'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.card_membership),
+                labelText: 'VISA Card Number',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   _email = value.trim();
@@ -59,7 +80,16 @@ class _VisaScreenState extends State<VisaScreen> {
               maxLength: 3,
               keyboardType: TextInputType.number,
               obscureText: true,
-              decoration: InputDecoration(hintText: 'CCY'),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.pin),
+                labelText: 'CCY',
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  ),
+                ),
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
                   _password = value.trim();
@@ -70,16 +100,21 @@ class _VisaScreenState extends State<VisaScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              ElevatedButton(child: Text('ENTER'), onPressed: () {}),
+              ElevatedButton(
+                  child: Text('ENTER'),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => SuccessScreen()));
+                  }),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextButton(
-                child: Text('Forgot Password'),
-                onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => ResertScreen())),
+                child: Text('Back'),
+                onPressed: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => MyApp())),
               )
             ],
           )

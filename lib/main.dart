@@ -39,8 +39,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List todos = List.empty();
-  String title = "";
-  String description = "";
+  String title = " ";
+  String description = " ";
   @override
   void initState() {
     super.initState();
@@ -118,11 +118,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.grey,
                             onPressed: () {
                               setState(() {
-                                //todos.removeAt(index);
                                 deleteTodo((documentSnapshot != null)
                                     ? (documentSnapshot["todoTitle"])
                                     : "");
                               });
+
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) => VisaScreen()));
                             },
                           ),
                         ),
@@ -138,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
+      /*  floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
               context: context,
@@ -165,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                  actions: <Widget>[
+                   actions: <Widget>[
                     TextButton(
                         onPressed: () {
                           setState(() {
@@ -176,6 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         },
                         child: const Text("Add"))
                   ],
+                  
                 );
               });
         },
@@ -184,6 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.white,
         ),
       ),
+      */
     );
   }
 }
